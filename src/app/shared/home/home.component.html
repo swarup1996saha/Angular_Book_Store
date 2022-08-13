@@ -1,3 +1,7 @@
 <div class="d-flex">
   <app-side-pannel></app-side-pannel>
+  <div class="home-main row">
+    <app-product class="col-4" [productBook]="book" *ngFor="let book of books"></app-product>
+  </div>
 </div>
+

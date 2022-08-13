@@ -10,6 +10,7 @@ import { PriceDetailComponent } from './price-detail/price-detail.component';
 import { SidePannelComponent } from './side-pannel/side-pannel.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -27,7 +28,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     RouterModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   exports:[
     HeaderComponent
