@@ -1,0 +1,36 @@
+.header{
+  background-color: #6e1818;
+  padding: 0 20px;
+  height: 70px;
+  position: sticky;
+  top: 0;
+  z-index: 99
+}
+
+.main-logo{
+  width: 100px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.btn-theme{
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: white;
+  background-color: rgb(255, 102, 0);
+  border-color: rgb(255, 102, 0);
+}
+
+.head-right-item{
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+.cart{
+  position: relative;
+  cursor: pointer;
+  outline: none;
+}
+.cart-image{
+  width: 30px;
+}

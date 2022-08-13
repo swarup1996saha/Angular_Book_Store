@@ -1,1 +1,15 @@
-<p>header works!</p>
+<div class="header d-flex align-items-center">
+  <a [routerLink]="['home']"><img class="main-logo" src="../../../assets/book.png" alt="book-mart-logo"></a>
+  <form #searchBox="ngForm">
+    <div class="header-search ms-3 d-flex align-items-center">
+      <input type="text" class="search-box" [(ngModel)]="searchText" name="searchText" placeholder="Search for Books">
+    </div>
+  </form>
+  <button class="btn btn-theme ms-4">Search</button>
+  <div class="head-right-item">
+    <div class="cart" [routerLink]="['cart']">
+      <img class="cart-image" src="../../../assets/cart.svg" alt="">
+    </div>
+  </div>
+</div>
+

@@ -8,6 +8,8 @@ import { CartComponent } from './cart/cart.component';
 import { CartItemComponent } from './cart-item/cart-item.component';
 import { PriceDetailComponent } from './price-detail/price-detail.component';
 import { SidePannelComponent } from './side-pannel/side-pannel.component';
+import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -23,7 +25,12 @@ import { SidePannelComponent } from './side-pannel/side-pannel.component';
     SidePannelComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule,
+    FormsModule
+  ],
+  exports:[
+    HeaderComponent
   ]
 })
 export class SharedModule { }
