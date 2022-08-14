@@ -1,0 +1,15 @@
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class CartService {
+  cartProducts:any[]=[]
+  constructor() { }
+
+  addProductToCart(product:any){
+    let currentBook = {...product,count:1}
+    this.cartProducts.push(currentBook)
+    console.log("🚀 ~ file: cart.service.ts ~ line 13 ~ CartService ~ addProductToCart ~ cartProd̥ucts", this.cartProducts)
+  }
+}
