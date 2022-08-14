@@ -34,3 +34,20 @@
 .cart-image{
   width: 30px;
 }
+
+.cart-items
+{
+  position: absolute;
+  right: 15px;
+  top: -5px;
+  background-color: rgb(255, 102, 5);
+  outline: white solid 2px;
+  height: 16px;
+  min-width: 18px;
+  border-radius: 50%;
+  font-size: 10px;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  padding: 2px;
+}

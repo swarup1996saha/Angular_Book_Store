@@ -9,6 +9,7 @@
   <div class="head-right-item">
     <div class="cart" [routerLink]="['cart']">
       <img class="cart-image" src="../../../assets/cart.svg" alt="">
+      <div class="cart-items" *ngIf="cartItemCount">{{cartItemCount}}</div>
     </div>
   </div>
 </div>
