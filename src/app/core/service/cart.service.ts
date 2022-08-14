@@ -19,4 +19,12 @@ export class CartService {
   getAllCartItems(){
     return this.cartProducts
   }
+
+  getPriceDetailsInCartItem(product:any){
+    let priceDetails ={
+      discountedPrice: (product.price*product.count)-(product.discount)/100*(product.price*product.count),
+      price: product.price*product.count
+    }
+    return priceDetails
+  }
 }

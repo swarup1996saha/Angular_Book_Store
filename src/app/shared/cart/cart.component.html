@@ -8,7 +8,7 @@
   </div>
   <div class="cart-content d-flex justify-content-between p-5" *ngIf="cartItems.length">
     <div class="items-container me-5">
-      <app-cart-item></app-cart-item>
+      <app-cart-item [item]="cartItem" *ngFor="let cartItem of cartItems"></app-cart-item>
     </div>
   </div>
 </div>
