@@ -15,4 +15,8 @@ export class CartService {
     console.log("🚀 ~ file: cart.service.ts ~ line 13 ~ CartService ~ addProductToCart ~ cartProd̥ucts", this.cartProducts)
     this.cartSubject.next(this.cartProducts)
   }
+
+  getAllCartItems(){
+    return this.cartProducts
+  }
 }
