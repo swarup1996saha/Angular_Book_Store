@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BooksService } from 'src/app/core/service/books.service';
 import { CartService } from 'src/app/core/service/cart.service';
 
 
@@ -10,7 +11,10 @@ import { CartService } from 'src/app/core/service/cart.service';
 export class HeaderComponent implements OnInit {
   searchText!:string
   cartItemCount!:Number
-  constructor(private cartService:CartService) { }
+
+  isSortmenuVisible:boolean=false
+  criteria:any[]=['Price(Low to High)']
+  constructor(private cartService:CartService, private bookService:BooksService) { }
 
   ngOnInit(): void {
     this.getCartValue()
@@ -22,5 +26,12 @@ export class HeaderComponent implements OnInit {
     })
   }
 
+  sortBooks(criterion:any){
+
+  }
+
+  showSortMenu(){
+    this.isSortmenuVisible = !this.isSortmenuVisible
+  }
 
 }
