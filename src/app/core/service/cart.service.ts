@@ -54,4 +54,18 @@ export class CartService {
       this.cartSubject.next(this.cartProducts)
     }
   }
+
+  getBilling(cartItems:any){
+   let billingDetails = {
+    price:0,
+    discount:0,
+    delivery:0
+   }
+   cartItems.forEach((item:any)=>{
+    billingDetails.price= billingDetails.price+(item.price * item.count)
+    billingDetails.discount= billingDetails.discount+((item.discount/100*item.price)*item.count)
+    billingDetails.price>=1500?billingDetails.delivery =0:billingDetails.delivery=50
+   })
+   return billingDetails
+  }
 }

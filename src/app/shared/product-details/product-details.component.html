@@ -1,1 +1,20 @@
-<p>product-details works!</p>
+<div class="price-details p-4">
+  <div class="text-secondary"><span>PRICE DETAILS</span></div>
+  <div class="d-flex justify-content-between">
+    <span>Price({{cartItems.length}})</span>
+    <span><b>{{cartItemsPrice|currency : 'INR'}}</b></span>
+  </div>
+  <div class="d-flex justify-content-between">
+    <span>Discount</span>
+    <span><b class="text-success">{{cartItemDiscount|currency:'INR'}}</b></span>
+  </div>
+  <div class="d-flex justify-content-between">
+    <span>Delivery Charges</span>
+    <span *ngIf="!deliveryCharges"><b>FREE</b></span>
+    <span *ngIf="deliveryCharges"><b>{{deliveryCharges}}</b></span>
+  </div>
+  <div class="d-flex justify-content-between mt-3 total-amount">
+    <h5>Total Amount</h5>
+    <h5>{{cartItemsPrice-cartItemDiscount+deliveryCharges}}</h5>
+  </div>
+</div>
