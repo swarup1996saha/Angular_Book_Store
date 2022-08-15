@@ -27,4 +27,31 @@ export class CartService {
     }
     return priceDetails
   }
+  incrementProductCount(product:any){
+    let index = this.cartProducts.findIndex((item)=>{
+      return item.isbn === product.isbn
+    })
+    this.cartProducts[index].count++
+    this.getPriceDetailsInCartItem(product)
+    this.cartSubject.next(this.cartProducts)
+  }
+
+  decrementProductCount(product:any){
+    let index = this.cartProducts.findIndex((item)=>{
+      return item.isbn === product.isbn
+    })
+    this.cartProducts[index].count--
+    this.getPriceDetailsInCartItem(product)
+    this.cartSubject.next(this.cartProducts)
+  }
+  removeItemFromcart(product:any){
+    let removeConfirm = window.confirm("Are you Sure?")
+    if(removeConfirm){
+      let index = this.cartProducts.findIndex((item)=>{
+        return item.isbn === product.isbn
+      })
+      this.cartProducts.splice(index,1)
+      this.cartSubject.next(this.cartProducts)
+    }
+  }
 }

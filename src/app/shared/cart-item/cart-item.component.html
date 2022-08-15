@@ -4,11 +4,11 @@
       <img class="book-thumbnail" [src]="item.thumbnailUrl" alt="">
     </div>
     <div class="counter mt-5 d-flex justify-content-center">
-      <button class="btn-theme d-flex align-items-center" [disabled]="item.count==1"><img class="action-icon" src="../../../assets/minus.svg"></button>
+      <button class="btn-theme d-flex align-items-center" (click)="decrementCount(item)" [disabled]="item.count==1" ><img class="action-icon" src="../../../assets/minus.svg"></button>
       <div class="w-50 text-center">
         {{item.count}}
       </div>
-      <button class="btn-theme d-flex align-items-center" [disabled]="item.count==1"><img class="action-icon" src="../../../assets/plus.svg"></button>
+      <button class="btn-theme d-flex align-items-center" (click)="incrementCount(item)"><img class="action-icon" src="../../../assets/plus.svg"></button>
     </div>
   </div>
   <div class="right-container ms-5 d-flex flex-column">
@@ -18,6 +18,6 @@
       <span class="ms-2"><s class="text-secondary">{{itemPrice | currency: 'INR'}}</s></span>
       <span class="ms-2 text=success">{{item.discount}}% off</span>
     </div>
-    <button class="btn-theme w-fit mt-auto">Remove</button>
+    <button class="btn-theme w-fit mt-auto" (click)="remove(item)">Remove</button>
   </div>
 </div>
