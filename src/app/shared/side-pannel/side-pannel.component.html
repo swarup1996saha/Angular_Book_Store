@@ -2,4 +2,12 @@
   <div class="panel-heading">
     <span>Filters</span>
   </div>
+  <div class="filter-price d-flex justify-content-between" (click)="showPriceFilters()">
+    <span>Price</span>
+  </div>
+  <div class="dropdown-container" *ngIf="isPriceFiltersVisible">
+    <div class="dropdown-list price-filter-list row">
+      <span class="dropdown-list-item" *ngFor="let priceFilter of PriceFilters" (click)="filterBooksByPrice(priceFilter)">Upto ₹{{priceFilter}}  </span>
+    </div>
+  </div>
 </div>

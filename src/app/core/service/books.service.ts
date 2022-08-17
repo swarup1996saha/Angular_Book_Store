@@ -14,6 +14,9 @@ export class BooksService {
 
   sortCriterion:any
   sortSubject = new Subject()
+
+  priceFilter:any
+  priceFilterSubject = new Subject()
   constructor(private http: HttpClient) { }
 
   getAllBooks(){
@@ -44,5 +47,16 @@ export class BooksService {
       break
     }
     return this.filterdBooks
+  }
+
+  getPriceFilter(price:any){
+    this.priceFilter = price
+    this.priceFilterSubject.next(this.priceFilter)
+  }
+
+  getFilteredBooksByPrice(price:any){
+    return this.filterdBooks = this.books.filter((book:any)=>{
+      return book.price <=price
+    })
   }
 }

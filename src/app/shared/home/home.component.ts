@@ -12,14 +12,28 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllBooks()
-    this.bookService.sortSubject.subscribe((sortCriterion:any)=>{
-      this.books=this.bookService.sortBooks(sortCriterion)
-    })
+    this.sortBooks()
+    this.priceFilter()
   }
   getAllBooks(){
     this.bookService.getAllBooks().subscribe((response)=>{
       this.books=response
       console.log(this.books);
+    })
+  }
+
+  sortBooks(){
+    this.bookService.sortSubject.subscribe((sortCriterion:any)=>{
+      this.books=this.bookService.sortBooks(sortCriterion)
+    })
+  }
+
+  priceFilter(){
+    this.bookService.priceFilterSubject.subscribe((price:any)=>{
+      this.bookService.getAllBooks().subscribe((res:any)=>{
+        this.books=res
+        this.books=this.bookService.getFilteredBooksByPrice(price)
+      })
     })
   }
 }
